@@ -1,0 +1,23 @@
+
+### Get all wallets
+GET http://localhost:8080/api/wallets
+
+### Get transaction history
+GET http://localhost:8080/api/wallets/1/transactions
+
+### Get newest transactions first
+GET http://localhost:8080/api/wallets/2/transactions?sort=createdAt,desc
+
+### Get only 2 transactions
+GET http://localhost:8080/api/wallets/1/transactions?page=0&size=2
+
+### Test a nonexistent wallet
+GET http://localhost:8080/api/wallets/99999/transactions
+### Transfer money
+POST http://localhost:8080/api/wallets/1/transfer
+Content-Type: application/json
+
+{
+  "toWalletId": 2,
+  "amount": 1.00
+}

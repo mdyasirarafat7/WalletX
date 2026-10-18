@@ -1,0 +1,38 @@
+POST http://localhost:8080/api/wallets
+Content-Type: application/json
+
+{
+  "ownerName": "Yasir"
+}
+
+###
+
+GET http://localhost:8080/api/wallets/1
+
+
+
+###
+POST http://localhost:8080/api/wallets/1/deposit
+Content-Type: application/json
+
+{
+  "amount": "11"
+}
+
+###
+
+GET http://localhost:8080/api/wallets/1
+###
+
+GET http://localhost:8080/api/wallets/99999
+###
+GET http://localhost:8080/api/wallets
+
+###
+POST http://localhost:8080/api/wallets/1/transfer
+Content-Type: application/json
+
+{
+  "toWalletId": 2,
+  "amount": 10.00
+}
